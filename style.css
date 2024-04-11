@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  #gameArea {
+    width: 400px;
+    height: 400px;
+    background-color: #111;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(20, 20px);
+    border: 2px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .snake {
+    width: 18px;
+    height: 18px;
+    background-color: #00FF00;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  }
+  
+  .food {
+    width: 18px;
+    height: 18px;
+    background-color: #FF0000;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+  }
+  
+  /* Botões de Controle */
+  .control-button {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    color: #333;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .control-button {
+      display: block; /* Mostra os botões em telas pequenas */
+    }
+  
+    .up {
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -120px);
+    }
+  
+    .left {
+      top: 90%;
+      left: 30%;
+    }
+  
+    .right {
+      top: 90%;
+      left: 70%;
+    }
+  
+    .down {
+      top: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
