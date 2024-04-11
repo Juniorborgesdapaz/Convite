@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
             snake.pop();
         }
 
-        // Verifica colisão com a parede
         if (head.x < 0 || head.x >= gameSize.width || head.y < 0 || head.y >= gameSize.height) {
             snake = [{ x: 200, y: 200 }];
             direction = { x: 0, y: 0 };
