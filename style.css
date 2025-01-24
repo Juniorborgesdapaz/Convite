@@ -1,0 +1,288 @@
+/* Estilo geral */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7e0f7;
+  overflow: hidden;
+}
+
+/* Container para a carta */
+.container {
+  width: 500px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Carta com efeito de abertura (não vira) */
+.card {
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Dentro da carta */
+.card-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: top;
+  animation: openCard 1.5s forwards;
+}
+
+/* Animação da carta abrindo */
+@keyframes openCard {
+  0% {
+      transform: scaleY(0);
+      opacity: 0;
+  }
+  100% {
+      transform: scaleY(1);
+      opacity: 1;
+  }
+}
+
+/* Frente da carta */
+.card-front {
+  width: 100%;
+  height: 100%;
+  background-color: #f9d7f1;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  transform: scaleY(1);
+  transition: transform 0.5s ease;
+}
+
+/* Cabeçalho da carta */
+.card-header h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #9b59b6;
+  margin-bottom: 15px;
+}
+
+/* Corpo da carta */
+.card-body p {
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Verso da carta (quando abrir) */
+.card-back {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  display: none;
+}
+
+/* Título da parte de trás */
+.card-back h2 {
+  color: #9b59b6;
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+/* Texto da parte de trás */
+.card-back p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilo dos botões */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn.confirm {
+  background-color: #9b59b6;
+  color: white;
+}
+
+.btn.confirm:hover {
+  background-color: #8e44ad;
+  transform: scale(1.05);
+}
+
+.btn.deny {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn.deny:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Efeito do botão "Negar" desaparecendo */
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      transform: scale(1);
+  }
+  to {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+}
+
+/* Estilo do efeito das flores ou corações */
+#flowerEffect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.flower, .heart {
+  position: absolute;
+  animation: bloom 2s forwards;
+}
+
+@keyframes bloom {
+  0% {
+      transform: scale(0);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 0;
+  }
+}
+/* Estilo da parte de trás da carta */
+.card-back {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  display: none;
+  color: #4a4a4a;
+  font-family: 'Georgia', serif;
+  transition: transform 1s ease;
+  transform: scaleY(1);
+}
+
+/* Estilo do conteúdo dentro da carta */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Título da parte de trás */
+.card-back h2 {
+  color: #9b59b6;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-family: 'Cursive', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Texto da parte de trás */
+.card-back p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Estilo dos botões */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Botão Confirmar */
+.btn.confirm {
+  background-color: #9b59b6;
+  color: white;
+  font-weight: bold;
+  border: 2px solid #9b59b6;
+}
+
+.btn.confirm:hover {
+  background-color: #8e44ad;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão Negar */
+.btn.deny {
+  background-color: #e74c3c;
+  color: white;
+  font-weight: bold;
+  border: 2px solid #e74c3c;
+}
+
+.btn.deny:hover {
+  background-color: #c0392b;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo da contagem regressiva */
+.countdown {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  display: none;
+  font-size: 24px;
+  color: #2c3e50;
+}
+
+#timeLeft {
+  font-size: 30px;
+  font-weight: bold;
+  color: #e74c3c;
+}

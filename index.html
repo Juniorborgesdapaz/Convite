@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta Interativa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="card-header">
+                        <h1>💌 Convite Especial 💌</h1>
+                    </div>
+                    <div class="card-body">
+                        <p>Clique na carta para abrir e ver o convite para o nosso encontro!</p>
+                    </div>
+                </div>
+                <div class="card-back" id="cardBack">
+                    <div class="card-content">
+                        <h3>🌹 Oi gatinha, desculpa por essa boiolagem  🌹</h3>
+                        <p>Que tal encontro muito legal no dia <strong>24 de Janeiro</strong>?</p>
+                        <p>Venha a minha casa para pedirmos um ifood hehehehehehe . 💖</p>
+                        <div class="buttons">
+                            <button id="confirmButton" class="btn confirm">Confirmar 💌</button>
+                            <button id="denyButton" class="btn deny">Negar</button>
+                        </div>
+                    </div>
+                    <!-- Contagem Regressiva (começa oculta) -->
+                    <div id="countdown" class="countdown">
+                        <h3>O botão de negar não funciona de proposito</h3>
+                        <p id="timeLeft"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="flowerEffect"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
